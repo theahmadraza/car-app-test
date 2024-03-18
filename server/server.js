@@ -26,7 +26,7 @@ const start = async () => {
             res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
             next();
         });
-        app.use(express.static("images"));
+        app.use("/images",express.static("tmp"));
         app.use('/auth', AuthRoutes);
         app.use('/product', IsAuthorized ,ProductRoutes)
         // app.use('/images', express.static(path.join(process.cwd(), 'images')));
