@@ -4,7 +4,9 @@
   "description": "Test Car App ",
   "main": "server.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
