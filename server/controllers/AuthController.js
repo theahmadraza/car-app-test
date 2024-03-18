@@ -2,29 +2,23 @@ const User = require("../models/userModel");
 const AuthValidation = require("../validations/AuthValidation");
 const jwt = require("jsonwebtoken");
 
-console.log(process.env);
-
 const handleLogin = async (req, res) => {
   try {
     const { error } = AuthValidation.LoginValidator.validate(req.body);
-    console.log(error, "00");
     if (error) {
       return res.status(400).json({ error: error.details[0].message });
     }
     const { email, password } = req.body;
     const user = await User.find({ email: email });
-    console.log(user[0].email, user[0]._id);
     if (user.length < 1) {
       return res.status(401).json({ success: false, message: "Invalid Email" });
     } else {
       const comparePassword = await User.find({ password: password });
-      console.log(comparePassword, "Password");
       if (comparePassword.length < 1) {
         return res
           .status(401)
           .json({ success: false, message: "Invalid Password" });
       } else {
-        console.log("Else Condition of Token");
         const token = jwt.sign(
           {
             userId: user[0]._id,
@@ -34,7 +28,6 @@ const handleLogin = async (req, res) => {
             expiresIn: "24h",
           }
         );
-        console.log(token, "Token");
         return res
           .status(200)
           .json({
