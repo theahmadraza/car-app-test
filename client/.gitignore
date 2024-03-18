@@ -1,0 +1,38 @@
+# Dependency directories
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Optional npm package manager cache directory
+.npm
+
+# Environment variables file
+.env
+
+# Editor directories and files
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.idea/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Output of npm commands
+*.log
+npm-debug.log*
+
+# Typescript files
+*.tsbuildinfo
+
+# Dependency directories
+jspm_packages/
+typings/
+
+# Compiled binary addons (node-gyp)
+build/Release
