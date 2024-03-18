@@ -26,9 +26,10 @@ const start = async () => {
             res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
             next();
         });
+        app.use(express.static("images"));
         app.use('/auth', AuthRoutes);
         app.use('/product', IsAuthorized ,ProductRoutes)
-        app.use('/images', express.static(path.join(process.cwd(), 'images')));
+        // app.use('/images', express.static(path.join(process.cwd(), 'images')));
 
         app.listen(process.env.PORT, () => {
             console.log(`listining the port at ${process.env.PORT}`);
