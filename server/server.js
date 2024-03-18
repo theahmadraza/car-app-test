@@ -28,7 +28,7 @@ const start = async () => {
         });
         app.use('/auth', AuthRoutes);
         app.use('/product', IsAuthorized ,ProductRoutes)
-        app.use('/images', express.static(path.join(__dirname, 'images')));
+        app.use('/images', express.static(path.join(process.cwd(), 'images')));
 
         app.listen(process.env.PORT, () => {
             console.log(`listining the port at ${process.env.PORT}`);
