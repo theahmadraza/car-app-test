@@ -30,8 +30,8 @@ const start = async () => {
         app.use('/product', IsAuthorized ,ProductRoutes)
         app.use('/images', express.static(path.join(__dirname, 'uploads')));
 
-        app.listen(8000, () => {
-            console.log("listining the port at 8000");
+        app.listen(process.env.PORT, () => {
+            console.log(`listining the port at ${process.env.PORT}`);
         });
     } catch (error) {
         console.log(error);
