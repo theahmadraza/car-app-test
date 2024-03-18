@@ -1,1 +1,5 @@
-{}
+{
+  "/add-car/page": "app/add-car/page.js",
+  "/login/page": "app/login/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
+}
