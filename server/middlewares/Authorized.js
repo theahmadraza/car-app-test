@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 
-const IsAuthorized = (req, res,  next) => {
+const Authorized = (req, res,  next) => {
     try {
         const token = req.headers.authorization.split(" ")[1];
         const verify = jwt.verify(token, process.env.JWT_TOKEN_SECRET);
@@ -11,4 +11,4 @@ const IsAuthorized = (req, res,  next) => {
     }
 };
 
-module.exports =  IsAuthorized;
+module.exports =  Authorized;

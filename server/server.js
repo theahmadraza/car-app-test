@@ -4,7 +4,7 @@ const cors = require('cors');
 const AuthRoutes = require("./routes/Auth");
 const ProductRoutes = require('./routes/ProductDetail')
 const path = require('path');
-const IsAuthorized = require("./middlewares/isAuthorized");
+const Authorized = require("./middlewares/Authorized");
 
 
 require('dotenv').config()
@@ -26,7 +26,7 @@ const start = async () => {
         });
         app.use("/images",express.static("images"));
         app.use('/auth', AuthRoutes);
-        app.use('/product', IsAuthorized ,ProductRoutes)
+        app.use('/product', Authorized ,ProductRoutes)
         // app.use('/images', express.static(path.join(process.cwd(), 'images')));
 
         app.listen(process.env.PORT, () => {
