@@ -1,5 +1,5 @@
 {
-  "/add-car/page": "app/add-car/page.js",
+  "/not-found": "app/not-found.js",
   "/login/page": "app/login/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/add-car/page": "app/add-car/page.js"
 }

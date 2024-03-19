@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChangeEvent } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { PhotoIcon, XCircleIcon } from "@heroicons/react/24/solid";
+import ProtectedRoute from "@/components/ProtectedRoutes";
 
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
@@ -48,6 +49,7 @@ const CarInformationValidationSchema = Yup.object({
 export default function AddCar() {
   const [files, setFiles] = useState<File[]>([]);
   const [imagePreview, setImagePreview] = useState<string[]>([]);
+
 
   const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -115,8 +117,10 @@ export default function AddCar() {
     setFiles([]);
     setImagePreview([]);
   };
+  
 
   return (
+    <ProtectedRoute>
     <div className="flex flex-1 flex-col items-center justify-center px-6 py-12 lg:px-8">
       <Formik
         initialValues={initialValues}
@@ -317,5 +321,6 @@ export default function AddCar() {
         )}
       </Formik>
     </div>
+    </ProtectedRoute>
   );
 }
