@@ -15,8 +15,8 @@ const createProduct = async (req, res) => {
     const imageUrls = [];
 
     files.forEach((file) => {
-      const productUrl = file.filename;
-      imageUrls.push(`http://localhost:8000/images/${productUrl}`);
+      const productUrl = file.path;
+      imageUrls.push(productUrl);
     });
 
     const product = new Product({
