@@ -1,10 +1,8 @@
 const connectDB = require("./db");
 const express = require("express");
 const cors = require('cors');
-// const CheckAuth = require("./middlewares/checkAuth");
 const AuthRoutes = require("./routes/Auth");
 const ProductRoutes = require('./routes/ProductDetail')
-// const bodyParser = require('body-parser')
 const path = require('path');
 const IsAuthorized = require("./middlewares/isAuthorized");
 
