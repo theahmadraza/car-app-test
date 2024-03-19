@@ -100,7 +100,7 @@ export default function AddCar() {
     formData.append("maxPictures", maxPictures.toString());
 
     try {
-      const url = `http://localhost:8000/product/add-product`;
+      const url = `https://car-app-test-backend.vercel.app/product/add-product`;
 
       const data = await axios.post(url, formData, {
         headers: {

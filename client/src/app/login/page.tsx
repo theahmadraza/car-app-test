@@ -31,7 +31,7 @@ export default function Login() {
     { resetForm }: FormikHelpers<FormValues>
   ) => {
     const { email, password } = values;
-    const url = `http://localhost:8000/auth/login`;
+    const url = `https://car-app-test-backend.vercel.app/auth/login`;
     try {
       const response = await axios.post(url, {
         email,
